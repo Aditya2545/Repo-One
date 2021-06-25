@@ -1,29 +1,25 @@
 version: 2.1
-
-# Define the jobs we want to run for this project
 jobs:
-  build:
+  test1:
     docker:
       - image: circleci/ruby:2.4.1
         auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+          username: Aditya2545
+          password: Asdfghqwer@456 
     steps:
       - checkout
-      - run: echo "Its a hii from Aditya"
-  test:
+      - run: echo "this is the test1 job"
+  test2:
     docker:
       - image: circleci/ruby:2.4.1
         auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+          username: Aditya2545
+          password: Asdfghqwer@456
     steps:
       - checkout
-      - run: echo "Its a another hii from Aditya"
-
-# Orchestrate our job run sequence
+      - run: echo "this is the test2 job"
 workflows:
-  build_and_test:
+  test1_and_test2:
     jobs:
-      - build
-      - test
+      - test1
+      - test2
